@@ -1,0 +1,42 @@
+{
+  "name": "com.unity.inputsystem",
+  "displayName": "Input System",
+  "version": "0.9.3-preview",
+  "unity": "2019.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Unity-Technologies/InputSystem.git",
+    "revision": "0953592de295b4c9ed91e6e1a3dc26a9c2e227cf"
+  },
+  "description": "A new input system which can be used as a more extensible and customizable alternative to Unity's classic input system in UnityEngine.Input.",
+  "keywords": [
+    "input",
+    "events",
+    "keyboard",
+    "mouse",
+    "gamepad",
+    "touch",
+    "vr",
+    "xr"
+  ],
+  "dependencies": {
+    "com.unity.ugui": "1.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "On-Screen Controls Sample",
+      "description": "Demonstrates a simple setup for an on-screen joystick.",
+      "path": "Samples~/OnScreenControls"
+    },
+    {
+      "displayName": "SimpleDemo",
+      "description": "A walkthrough of a simple character controller that demonstrates several techniques for working with the input system. See the README.md file in the sample for details.",
+      "path": "Samples~/SimpleDemo"
+    },
+    {
+      "displayName": "Visualizers",
+      "description": "Several example visualizations of input controls/devices and input actions.",
+      "path": "Samples~/Visualizers"
+    }
+  ]
+}

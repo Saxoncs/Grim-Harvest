@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: ae54e995f58c0f2478f153666621157a
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  - first:
+      74: 7201991774376690145
+    second: Take 001 //// Weapon_shield_prototype_01_animReady:DoorShield_prototype
+  - first:
+      74: 4273587264070421538
+    second: Take 001 //// Weapon_shield_prototype_01_animReady:shield_GlobalCtrl
+  - first:
+      74: 4771440590418666316
+    second: Take 001 //// Weapon_handScythe_prototype_ver02_animReady:Scythe_grpAll
+  - first:
+      74: -1373635791703345738
+    second: Take 001 //// Character_prototype_002_animationReady:GrimmyRig_All
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 25
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Grimmy_M(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:DoorShield_prototype
+      parentName: Grimmy_M(Clone)
+      position: {x: -0, y: 0.021496765, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.85555553, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:handle
+      parentName: Weapon_shield_prototype_01_animReady:DoorShield_prototype
+      position: {x: -0, y: -0.021496765, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:door
+      parentName: Weapon_shield_prototype_01_animReady:DoorShield_prototype
+      position: {x: -0, y: 0.85039574, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_GlobalCtrl
+      parentName: Grimmy_M(Clone)
+      position: {x: 0.76063585, y: 1.0186951, z: 0.33264136}
+      rotation: {x: 0.10862008, y: 0.9153284, z: 0.11829837, w: -0.36929813}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_topRCtrl
+      parentName: Weapon_shield_prototype_01_animReady:shield_GlobalCtrl
+      position: {x: -0.18193936, y: 0.6080962, z: -0.08443111}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_topLCtrl
+      parentName: Weapon_shield_prototype_01_animReady:shield_GlobalCtrl
+      position: {x: 0.3220642, y: 0.628114, z: -0.08443111}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_midLCtrl
+      parentName: Weapon_shield_prototype_01_animReady:shield_GlobalCtrl
+      position: {x: 0.34049913, y: 0.005975008, z: -0.08443111}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_midRCtrl
+      parentName: Weapon_shield_prototype_01_animReady:shield_GlobalCtrl
+      position: {x: -0.36012504, y: 0.07203388, z: -0.08443111}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_bottomRCtrl
+      parentName: Weapon_shield_prototype_01_animReady:shield_GlobalCtrl
+      position: {x: -0.33607668, y: -0.6761569, z: -0.08443111}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_bottomLCtrl
+      parentName: Weapon_shield_prototype_01_animReady:shield_GlobalCtrl
+      position: {x: 0.3661034, y: -0.6761569, z: -0.08443111}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_handleCtrl
+      parentName: Weapon_shield_prototype_01_animReady:shield_GlobalCtrl
+      position: {x: -0.28821746, y: -0.03257525, z: 0.06533391}
+      rotation: {x: 0, y: 0.13960823, z: -0, w: 0.99020684}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:Scythe_grpAll
+      parentName: Grimmy_M(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_handleCtrl_1
+      parentName: Weapon_handScythe_prototype_ver02_animReady:Scythe_grpAll
+      position: {x: -0.54500985, y: 0.73888236, z: -0.0144433025}
+      rotation: {x: 0.043512676, y: 0.47660562, z: 0.34743318, w: 0.80637705}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_handleCtrl_2
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_handleCtrl_1
+      position: {x: -0, y: 0.25000003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_handleCtrl_3
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_handleCtrl_2
+      position: {x: -0, y: 0.25000003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_handleCtrl_4
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_handleCtrl_3
+      position: {x: -0, y: 0.25000003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_5
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_handleCtrl_4
+      position: {x: -0, y: 0.25068304, z: 0.035289116}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_6
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_5
+      position: {x: -0.25000003, y: 0.012337444, z: -0.035289116}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_7
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_6
+      position: {x: -0.25000003, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_8
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_7
+      position: {x: -0.17306072, y: -0.016571583, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_9
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_8
+      position: {x: -0.16595864, y: -0.073631465, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_end
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeCtrl_9
+      position: {x: -0.05293726, y: -0.1730151, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_Prototype
+      parentName: Weapon_handScythe_prototype_ver02_animReady:Scythe_grpAll
+      position: {x: -0.0003090183, y: 0.007649925, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:HandScythe_Prototype
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_Prototype
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:handle
+      parentName: Weapon_handScythe_prototype_ver02_animReady:HandScythe_Prototype
+      position: {x: -0, y: 0.19018358, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.3939693, y: 1.6830975, z: 1.3939693}
+    - name: Weapon_handScythe_prototype_ver02_animReady:pCube1
+      parentName: Weapon_handScythe_prototype_ver02_animReady:HandScythe_Prototype
+      position: {x: -0.27469662, y: 1.0041502, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 2.9833202, y: 0.70213133, z: 0.28231293}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_handleJnt_1
+      parentName: Weapon_handScythe_prototype_ver02_animReady:Scythe_grpAll
+      position: {x: -0.55607146, y: 0.7552881, z: -0.0060379067}
+      rotation: {x: -0.30600095, y: 0.36798057, z: -0.32398555, w: 0.81608033}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_handleJnt_2
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_handleJnt_1
+      position: {x: -0.22850437, y: 5.551116e-17, z: -5.551116e-17}
+      rotation: {x: 0, y: -0, z: -0.0006578492, w: 0.9999998}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_handleJnt_3
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_handleJnt_2
+      position: {x: -0.25000003, y: -8.493206e-15, z: 1.1102232e-16}
+      rotation: {x: 0, y: 0, z: 2.220446e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_handleJnt_4
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_handleJnt_3
+      position: {x: -0.25000003, y: -8.437695e-15, z: 0}
+      rotation: {x: 0, y: 0, z: 2.220446e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_5
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_handleJnt_4
+      position: {x: -0.25000003, y: -8.326673e-15, z: 5.551116e-17}
+      rotation: {x: 0, y: 0, z: 0.6884724, w: 0.7252625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_6
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_5
+      position: {x: -0.25033882, y: -6.661338e-16, z: -5.551116e-17}
+      rotation: {x: 0, y: 0, z: 0.026014548, w: 0.99966156}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_7
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_6
+      position: {x: -0.25000003, y: -2.2204463e-16, z: 0}
+      rotation: {x: 0, y: 0, z: 0.047714163, w: 0.998861}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_8
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_7
+      position: {x: -0.17385231, y: 4.4408926e-16, z: -1.1102232e-16}
+      rotation: {x: 0, y: 0, z: 0.16036259, w: 0.98705816}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_9
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_8
+      position: {x: -0.18155952, y: 2.2204463e-16, z: 3.330669e-16}
+      rotation: {x: 0, y: 0, z: 0.4151847, w: 0.9097371}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_end
+      parentName: Weapon_handScythe_prototype_ver02_animReady:scythe_bladeJnt_9
+      position: {x: -0.18093257, y: 2.2204463e-16, z: 1.6653345e-16}
+      rotation: {x: 0, y: -0, z: -0.5947351, w: 0.80392176}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:Grimmy_Tester_bodyMesh
+      parentName: Grimmy_M(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:Body
+      parentName: Character_prototype_002_animationReady:Grimmy_Tester_bodyMesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:Head
+      parentName: Character_prototype_002_animationReady:Grimmy_Tester_bodyMesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:R_hand
+      parentName: Character_prototype_002_animationReady:Grimmy_Tester_bodyMesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:L_hand
+      parentName: Character_prototype_002_animationReady:Grimmy_Tester_bodyMesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:Eyes
+      parentName: Character_prototype_002_animationReady:Grimmy_Tester_bodyMesh
+      position: {x: -0, y: -0.027165748, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:Eye_left
+      parentName: Character_prototype_002_animationReady:Eyes
+      position: {x: -0, y: 0.027165748, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:Eye_right
+      parentName: Character_prototype_002_animationReady:Eyes
+      position: {x: -0, y: 0.027165748, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:GrimmyRig_All
+      parentName: Grimmy_M(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:rootCtrl
+      parentName: Character_prototype_002_animationReady:GrimmyRig_All
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:spineCtrl_1
+      parentName: Character_prototype_002_animationReady:rootCtrl
+      position: {x: -0, y: 0.50000006, z: 0}
+      rotation: {x: -0.059292257, y: 0, z: -0, w: 0.99824065}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:spineCtrl_2
+      parentName: Character_prototype_002_animationReady:spineCtrl_1
+      position: {x: -0, y: 0.50000006, z: 0}
+      rotation: {x: 0.11853553, y: 0.14506197, z: 0.0063802274, w: 0.9822757}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:spineCtrl_3
+      parentName: Character_prototype_002_animationReady:spineCtrl_2
+      position: {x: -0, y: 0.25000003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:spineCtrl_4
+      parentName: Character_prototype_002_animationReady:spineCtrl_3
+      position: {x: -0, y: 0.25000003, z: 0}
+      rotation: {x: 0.04719017, y: -0.091567576, z: 0.0076057957, w: 0.994651}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:neckCtrl
+      parentName: Character_prototype_002_animationReady:spineCtrl_4
+      position: {x: -0, y: 0.25000003, z: 0}
+      rotation: {x: -0.04587571, y: 0, z: -0, w: 0.99894714}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:headCtrl
+      parentName: Character_prototype_002_animationReady:neckCtrl
+      position: {x: -0, y: 0.25000003, z: 0}
+      rotation: {x: -0.106573775, y: -0.05750217, z: 0.0057307375, w: 0.99262416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:LhandCtrl
+      parentName: Character_prototype_002_animationReady:neckCtrl
+      position: {x: 0.72075, y: -0.62340164, z: 0.23775646}
+      rotation: {x: 0.06563798, y: 0.3127731, z: -0.12044354, w: 0.9398713}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:RhandCtrl
+      parentName: Character_prototype_002_animationReady:neckCtrl
+      position: {x: -0.6871488, y: -0.8183244, z: 0.05449374}
+      rotation: {x: 0.20915572, y: -0.2665904, z: 0.24756715, w: 0.90768605}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:cloakBaseCtrl_bR
+      parentName: Character_prototype_002_animationReady:rootCtrl
+      position: {x: -0.41454542, y: 0, z: -0.7016117}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:cloakBaseCtrl_bL
+      parentName: Character_prototype_002_animationReady:rootCtrl
+      position: {x: 0.4864739, y: 0.0019691454, z: -0.873922}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:cloakBaseCtrl_fL
+      parentName: Character_prototype_002_animationReady:rootCtrl
+      position: {x: 0.50000006, y: 0, z: 0.50000006}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:cloakBaseCtrl_fR
+      parentName: Character_prototype_002_animationReady:rootCtrl
+      position: {x: -0.5037583, y: 0, z: 0.5029355}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:rootJnt
+      parentName: Character_prototype_002_animationReady:GrimmyRig_All
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:cloakBaseJnt_fL
+      parentName: Character_prototype_002_animationReady:rootJnt
+      position: {x: -0, y: 0.50000006, z: 0.50000006}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:cloakBaseJnt_fR
+      parentName: Character_prototype_002_animationReady:rootJnt
+      position: {x: -0, y: -0.5037583, z: 0.5029355}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:cloakBaseJnt_bL
+      parentName: Character_prototype_002_animationReady:rootJnt
+      position: {x: -0.0019691454, y: 0.4864739, z: -0.873922}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:cloakBaseJnt_bR
+      parentName: Character_prototype_002_animationReady:rootJnt
+      position: {x: -0, y: -0.41454542, z: -0.7016117}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:spineJnt_1
+      parentName: Character_prototype_002_animationReady:rootJnt
+      position: {x: -0.50000006, y: 0, z: 0}
+      rotation: {x: 0, y: -0.059292257, z: -0, w: 0.99824065}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:spineJnt_2
+      parentName: Character_prototype_002_animationReady:spineJnt_1
+      position: {x: -0.50000006, y: 0, z: 6.938895e-18}
+      rotation: {x: -0.14506197, y: 0.11853553, z: 0.0063802283, w: 0.9822757}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:spineJnt_3
+      parentName: Character_prototype_002_animationReady:spineJnt_2
+      position: {x: -0.25000003, y: 1.387779e-17, z: -8.326673e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:spineJnt_4
+      parentName: Character_prototype_002_animationReady:spineJnt_3
+      position: {x: -0.25000003, y: 3.8163916e-17, z: -1.1102232e-16}
+      rotation: {x: 0.091567576, y: 0.047190174, z: 0.007605796, w: 0.994651}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:neckJnt
+      parentName: Character_prototype_002_animationReady:spineJnt_4
+      position: {x: -0.25000003, y: 3.2959746e-17, z: 5.551116e-17}
+      rotation: {x: 0, y: -0.04587571, z: -0, w: 0.99894714}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:Rhand
+      parentName: Character_prototype_002_animationReady:neckJnt
+      position: {x: 0.8183244, y: -0.68714887, z: 0.054493733}
+      rotation: {x: 0.33640328, y: -0.040612426, z: 0.8168874, w: 0.46677455}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:Lhand
+      parentName: Character_prototype_002_animationReady:neckJnt
+      position: {x: 0.6192927, y: 0.72370076, z: 0.23666099}
+      rotation: {x: -0.17475092, y: 0.26757702, z: 0.5794229, w: 0.7497558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:headJnt_6
+      parentName: Character_prototype_002_animationReady:neckJnt
+      position: {x: -0.25000003, y: -1.387779e-17, z: -1.1102232e-16}
+      rotation: {x: 0.057502165, y: -0.106573775, z: 0.005730738, w: 0.99262416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Character_prototype_002_animationReady:headTopJnt
+      parentName: Character_prototype_002_animationReady:headJnt_6
+      position: {x: -0.39758998, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_COG
+      parentName: Grimmy_M(Clone)
+      position: {x: 0.76063585, y: 1.0186951, z: 0.33264136}
+      rotation: {x: 0.10862008, y: 0.9153284, z: 0.11829837, w: -0.36929813}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_topLJnt
+      parentName: Weapon_shield_prototype_01_animReady:shield_COG
+      position: {x: 0.3220642, y: 0.628114, z: -1.1102232e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_bottomLJnt
+      parentName: Weapon_shield_prototype_01_animReady:shield_COG
+      position: {x: 0.3661034, y: -0.6761569, z: 5.551116e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_topRJnt
+      parentName: Weapon_shield_prototype_01_animReady:shield_COG
+      position: {x: -0.18193936, y: 0.6080962, z: 5.551116e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_middleLJnt
+      parentName: Weapon_shield_prototype_01_animReady:shield_COG
+      position: {x: 0.34049913, y: 0.005975004, z: -1.6653345e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_middleRJnt
+      parentName: Weapon_shield_prototype_01_animReady:shield_COG
+      position: {x: -0.36012504, y: 0.07203385, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_bottomRJnt
+      parentName: Weapon_shield_prototype_01_animReady:shield_COG
+      position: {x: -0.33607668, y: -0.6761569, z: -0.08443111}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_shield_prototype_01_animReady:shield_handleJnt
+      parentName: Weapon_shield_prototype_01_animReady:shield_COG
+      position: {x: -0.28821746, y: -0.03257527, z: 0.06533391}
+      rotation: {x: 0, y: 0.13960823, z: -0, w: 0.99020684}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 25
+    rootMotionBoneName: Character_prototype_002_animationReady:GrimmyRig_All
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
