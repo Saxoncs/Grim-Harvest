@@ -513,22 +513,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &2051888128
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051888126}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &670903282705563624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -536,9 +520,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 670903283095302084, guid: bdd32ee31482acb418a9e4e692df3941,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 495908741886405461, guid: bdd32ee31482acb418a9e4e692df3941,
+        type: 3}
+      propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1917281879058016028, guid: bdd32ee31482acb418a9e4e692df3941,
@@ -631,6 +619,5 @@ PrefabInstance:
       propertyPath: cameraFocus
       value: 
       objectReference: {fileID: 1030736808}
-    m_RemovedComponents:
-    - {fileID: 670903283095302084, guid: bdd32ee31482acb418a9e4e692df3941, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd32ee31482acb418a9e4e692df3941, type: 3}

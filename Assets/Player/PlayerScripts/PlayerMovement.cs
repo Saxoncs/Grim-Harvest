@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     #region Declaring Variables
+
+
     //Tracks the state the player is in in terms of their movement options
     public State state;
 
@@ -37,8 +39,11 @@ public class PlayerMovement : MonoBehaviour
     //combines with gravity creates character's fall speed
     float fallMultiplier = 2;
 
+    //controls class manages when a player is pressing a button / key
     PlayerControls controls;
-    CharacterController charController;
+
+    //this will manage the player's movement
+    Rigidbody rb;
 
     //distance the player is going to move next frame
     [SerializeField] Vector3 movement;
@@ -58,9 +63,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //create a playerControls object with which to bind inputs
         controls = new PlayerControls();
-        //charController originally handled movement, replace this with a rigidbody reference.
-        //charController = GetComponent<CharacterController>();
-        //get location of the camerafocus
+
+        //handles the character's movement and interactions in physical space
+        rb = GetComponent<Rigidbody>();
+
+        //get location of the camerafocus, this may be redundant if we go the fixed camera route
         cameraTransform = cameraFocus.GetComponent<Transform>();
 
         //Get the specific player movement and attacks class attached to the current player.
@@ -112,13 +119,12 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer()
     {
 
-        //works off of legacy carController to determine if grounded, this will need to be fixed
-        ////If not stunned apply the player's input
-        //if (state == State.Free && charController.isGrounded)
-        //{
+        //If not stunned apply the player's input
+        if (state == State.Free) //* && isGrounded
+        {
 
-        //    MovementInput();
-        //    //Look where you're going, needs to be fixed, as forward movement points too far down
+            MovementInput();
+        //    //Look where you're going
         //    Vector3 facing = movement;
         //    facing.y = 0;
 
@@ -126,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
         //    transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
 
 
-        //}
+        }
 
 
         //// apply gravity, the gravity is stronger as a player falls
@@ -137,24 +143,23 @@ public class PlayerMovement : MonoBehaviour
         //}
 
 
-        ////add all inputs together and move based on state
-        //switch (state)
-        //{
-        //    case State.Free:
-        //        movement = (Vector3.ClampMagnitude(forwardMovement + rightMovement, 1) * moveSpeed) + verticalMovement;
-        //        break;
-        //    case State.Dashing:
-        //        movement = (Vector3.ClampMagnitude(forwardMovement + rightMovement, 1) * dashSpeed) + verticalMovement;
-        //        break;
+        //add all inputs together and move based on state
+        switch (state)
+        {
+            case State.Free:
+                movement = (Vector3.ClampMagnitude(forwardMovement + rightMovement, 1) * moveSpeed) + verticalMovement;
+                break;
+            case State.Dashing:
+                movement = (Vector3.ClampMagnitude(forwardMovement + rightMovement, 1) * dashSpeed) + verticalMovement;
+                break;
 
-        //    default:
-        //        break;
-        //}
+            default:
+                break;
+        }
 
 
-        ////actually move the character based on the values above, this will need to be replaced by a rigidbody movement call
-        //charController.Move(movement * Time.deltaTime);
-
+        //actually move the character based on the values above, this will need to be replaced by a rigidbody movement call, replace the rb.velocity with movement once gravity is fixed
+        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
     }
 
 
@@ -170,6 +175,7 @@ public class PlayerMovement : MonoBehaviour
         //Remove vertical component of the character movement
         rightMovement.y = 0;
         forwardMovement.y = 0;
+
 
     }
 
@@ -199,10 +205,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("dash input recognized");
 
-        if (state == State.Free && charController.isGrounded)
-        {
-            StartCoroutine(Dash());
-        }
+        //if (state == State.Free && charController.isGrounded)
+        //{
+        //    StartCoroutine(Dash());
+        //}
     }
 
     IEnumerator Dash()
@@ -227,11 +233,11 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        //continue dash if the player leaves the ground while dashing
-        while (!charController.isGrounded && state == State.Dashing)
-        {
-            yield return null;
-        }
+        ////continue dash if the player leaves the ground while dashing
+        //while (!charController.isGrounded && state == State.Dashing)
+        //{
+        //    yield return null;
+        //}
         
         
         //if the player is still considered to be dashing swap them back to free, is needs the if statement to prevent the player from being reassigned to free if the dash is interrupted by hitstun or a special
@@ -257,20 +263,20 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("jump input recognized");
 
-        //if able and willing, jump! could add dash to the options here to allow for a dash jump
-        if (charController.isGrounded)
-        {
-            switch (state)
-            {
-                case State.Free:
-                case State.Dashing:
-                    verticalMovement.y = jumpHeight;
-                    break;
+        ////if able and willing, jump! could add dash to the options here to allow for a dash jump
+        //if (charController.isGrounded)
+        //{
+        //    switch (state)
+        //    {
+        //        case State.Free:
+        //        case State.Dashing:
+        //            verticalMovement.y = jumpHeight;
+        //            break;
 
-                default:
-                    break;
-            }
-        }
+        //        default:
+        //            break;
+        //    }
+        //}
     }
 
 
