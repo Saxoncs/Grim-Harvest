@@ -45,9 +45,13 @@ public class PlayerMovement : MonoBehaviour
     //this will manage the player's movement
     Rigidbody rb;
 
+    //handles player collisions
+    Collider coll;
+
     //distance the player is going to move next frame
     [SerializeField] Vector3 movement;
 
+    //camera objects
     [SerializeField] GameObject cameraFocus;
     Transform cameraTransform;
 
@@ -66,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
 
         //handles the character's movement and interactions in physical space
         rb = GetComponent<Rigidbody>();
+
+        coll = GetComponent<Collider>();
 
         //get location of the camerafocus, this may be redundant if we go the fixed camera route
         cameraTransform = cameraFocus.GetComponent<Transform>();
@@ -120,27 +126,28 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //If not stunned apply the player's input
-        if (state == State.Free) //* && isGrounded
+        if (state == State.Free && isGrounded())
         {
 
             MovementInput();
-        //    //Look where you're going
-        //    Vector3 facing = movement;
-        //    facing.y = 0;
+            //    //Look where you're going
+            //    Vector3 facing = movement;
+            //    facing.y = 0;
 
-        //    //I don't 100% know why but I need the vector3.up there to prevent the character from looking into the sky or ground and ensure they face forward
-        //    transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
+            //    //I don't 100% know why but I need the vector3.up there to prevent the character from looking into the sky or ground and ensure they face forward
+            //    transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
 
 
         }
 
 
         //// apply gravity, the gravity is stronger as a player falls
-        //if (!charController.isGrounded)
-        //{
-        //    if (verticalMovement.y < 0) verticalMovement.y -= gravity * fallMultiplier * Time.deltaTime;
-        //    else verticalMovement.y -= gravity * Time.deltaTime;
-        //}
+        if (!isGrounded())
+        {
+            if (verticalMovement.y < 0) verticalMovement.y -= gravity * fallMultiplier * Time.deltaTime;
+            else verticalMovement.y -= gravity * Time.deltaTime;
+        }
+        else if (verticalMovement.y < 0) verticalMovement.y = 0;
 
 
         //add all inputs together and move based on state
@@ -159,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         //actually move the character based on the values above, this will need to be replaced by a rigidbody movement call, replace the rb.velocity with movement once gravity is fixed
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        rb.velocity = movement;
     }
 
 
@@ -205,10 +212,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("dash input recognized");
 
-        //if (state == State.Free && charController.isGrounded)
-        //{
-        //    StartCoroutine(Dash());
-        //}
+        if (state == State.Free && isGrounded())
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     IEnumerator Dash()
@@ -229,17 +236,17 @@ public class PlayerMovement : MonoBehaviour
             dashTime += Time.deltaTime;
             yield return null;
 
-        
+
 
         }
 
-        ////continue dash if the player leaves the ground while dashing
-        //while (!charController.isGrounded && state == State.Dashing)
-        //{
-        //    yield return null;
-        //}
-        
-        
+        //continue dash if the player leaves the ground while dashing
+        while (isGrounded() && state == State.Dashing)
+        {
+            yield return null;
+        }
+
+
         //if the player is still considered to be dashing swap them back to free, is needs the if statement to prevent the player from being reassigned to free if the dash is interrupted by hitstun or a special
         if (state == State.Dashing) state = State.Free;
 
@@ -247,8 +254,8 @@ public class PlayerMovement : MonoBehaviour
 
         Hold();
 
-    
-        
+
+
 
     }
 
@@ -264,19 +271,19 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("jump input recognized");
 
         ////if able and willing, jump! could add dash to the options here to allow for a dash jump
-        //if (charController.isGrounded)
-        //{
-        //    switch (state)
-        //    {
-        //        case State.Free:
-        //        case State.Dashing:
-        //            verticalMovement.y = jumpHeight;
-        //            break;
+        if (isGrounded())
+        {
+            switch (state)
+            {
+                case State.Free:
+                case State.Dashing:
+                    verticalMovement.y = jumpHeight;
+                    break;
 
-        //        default:
-        //            break;
-        //    }
-        //}
+                default:
+                    break;
+            }
+        }
     }
 
 
@@ -286,7 +293,14 @@ public class PlayerMovement : MonoBehaviour
 
     //enum keeps track of what the player's state is so that it can shift in and out
     [SerializeField] public enum State { Free, Stunned, Dashing, Rooted, Attacking, Dodging, Blocking }
-    [SerializeField] public enum Weapon { SnS, GreatScythe, TwinScythe}
+    [SerializeField] public enum Weapon { SnS, GreatScythe, TwinScythe }
+
+    //checks if the player is grounded using colliders
+    bool isGrounded()
+    {
+        //start a raycast from the player position, aim it dow, send it as far as the the of the character (with a slight margin of error)
+        return Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y + 0.1f);
+    }
 
     #endregion
 
