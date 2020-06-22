@@ -130,12 +130,12 @@ public class PlayerMovement : MonoBehaviour
         {
 
             MovementInput();
-            //    //Look where you're going
-            //    Vector3 facing = movement;
-            //    facing.y = 0;
+            //Look where you're going
+            Vector3 facing = movement;
+            facing.y = 0;
 
-            //    //I don't 100% know why but I need the vector3.up there to prevent the character from looking into the sky or ground and ensure they face forward
-            //    transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
+            //I don't 100% know why but I need the vector3.up there to prevent the character from looking into the sky or ground and ensure they face forward
+            transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
 
 
         }

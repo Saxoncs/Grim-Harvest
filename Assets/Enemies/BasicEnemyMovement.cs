@@ -224,7 +224,7 @@ public class BasicEnemyMovement : MonoBehaviour
 
         //debug mode to show where the sphere of patrol is going to be
         Gizmos.color = gizmoColour;
-        Gizmos.DrawSphere(startingLocation, roamDistance);
+        Gizmos.DrawSphere(transform.position, roamDistance);
     }
 
 
