@@ -8,31 +8,31 @@ public class Enemy : MonoBehaviour
 {
 
     //Declaring some important variables
-    private Vector3 startingLocation;
-    private Vector2 startingCoordinates;
-    private Vector3 currentLocation;
+    protected Vector3 startingLocation;
+    protected Vector2 startingCoordinates;
+    protected Vector3 currentLocation;
 
     //track the player
     [SerializeField] GameObject player;
-    private Vector3 playerLocation;
+    protected Vector3 playerLocation;
 
     //determines if the enemy is vulnerable or not
-    private bool vulnerable = true;
+    protected bool vulnerable = true;
 
     //how long an enemy remains invulnerable after being hit
-    [SerializeField] private float hitInvulnerablility;
+    [SerializeField] protected float hitInvulnerablility;
 
     //Enemy health
-    [SerializeField] private float health;
+    [SerializeField] protected float health;
 
     //The amount of time the enemy will stop for before changing directions
-    [SerializeField] private float waitTime;
+    [SerializeField] protected float waitTime;
 
     //checks whether the enemy is waiting or not, should be replaced with a state system
-    private bool waiting;
+    protected bool waiting;
 
     // Hitbox data for the player
-    private Hitbox hitbox;
+    protected Hitbox hitbox;
 
 
 

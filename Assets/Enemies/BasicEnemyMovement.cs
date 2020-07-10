@@ -30,14 +30,14 @@ public class BasicEnemyMovement : Enemy
 
 
     //overrides from enemy class
-    override bool CheckForPlayer()
+    protected override bool CheckForPlayer()
     {
         if (Vector3.Distance(playerLocation, currentLocation) < aggroRange) return true;
         else return false;
     }
 
     //overrides from enemy class
-    override void MoveToPlayer()
+    protected override void MoveToPlayer()
     {
         if (!waiting)
         {
@@ -55,7 +55,7 @@ public class BasicEnemyMovement : Enemy
     }
 
     // overrides from enemy class
-    override void Patrol()
+    protected override void Patrol()
     {
         if (!waiting)
         {
@@ -76,28 +76,6 @@ public class BasicEnemyMovement : Enemy
         }
     }
 
-
-    IEnumerator StopandWait()
-    {
-        //start clock
-        float elapsedTime = 0;
-
-        //start waiting
-        waiting = true;
-
-        //clock ticks
-        while (waitTime > elapsedTime)
-        {
-            elapsedTime += Time.deltaTime;
-            yield return null;
-
-        }
-
-        //finish waiting
-        waiting = false;
-
-
-    }
 
     void PickDestination()
     {
