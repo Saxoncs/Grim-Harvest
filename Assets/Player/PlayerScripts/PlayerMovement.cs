@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
         coll = GetComponent<Collider>();
 
-        //get location of the camerafocus, this may be redundant if we go the fixed camera route
+        //get location of the camera focus, this may be redundant if we go the fixed camera route
         cameraTransform = cameraFocus.GetComponent<Transform>();
 
         //Get the specific player movement and attacks class attached to the current player.
@@ -135,7 +135,11 @@ public class PlayerMovement : MonoBehaviour
             facing.y = 0;
 
             //I don't 100% know why but I need the vector3.up there to prevent the character from looking into the sky or ground and ensure they face forward
-            transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
+            if (facing != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
+            }
+            
 
 
         }
@@ -156,6 +160,12 @@ public class PlayerMovement : MonoBehaviour
             case State.Free:
                 movement = (Vector3.ClampMagnitude(forwardMovement + rightMovement, 1) * moveSpeed) + verticalMovement;
                 break;
+
+            case State.Blocking:
+            case State.Attacking:
+                movement = verticalMovement;
+                break;
+
             case State.Dashing:
                 movement = (Vector3.ClampMagnitude(forwardMovement + rightMovement, 1) * dashSpeed) + verticalMovement;
                 break;
