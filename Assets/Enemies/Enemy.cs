@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float health;
 
     //The amount of time the enemy will stop for before changing directions
-    [SerializeField] protected float waitTime;
+    [SerializeField] protected float thinkTime;
 
     //checks whether the enemy is waiting or not, should be replaced with a state system
     protected bool waiting;
@@ -81,7 +81,7 @@ public class Enemy : MonoBehaviour
     //what the enemy does when its health reaches 0
     protected virtual void Death()
     {
-
+        Destroy(gameObject);
     }
 
     //how the enemy searches for the player, and consequently what will cause it to change behavior
@@ -104,7 +104,7 @@ public class Enemy : MonoBehaviour
 
 
     //tells the enemy to stop for a while
-    protected IEnumerator StopandWait()
+    protected IEnumerator StopandWait(float waitTime)
     {
         //start clock
         float elapsedTime = 0;
@@ -147,7 +147,7 @@ public class Enemy : MonoBehaviour
     }
 
     //what happens when an enemy collides with a hit box
-    void OnTriggerEnter(Collider attackingHitbox)
+    protected virtual void OnTriggerEnter(Collider attackingHitbox)
     {
         Debug.Log("Collision Detected");
 
@@ -156,14 +156,6 @@ public class Enemy : MonoBehaviour
         if (hitbox.type == "player" && vulnerable == true)
         {
             Debug.Log("I'm hit!");
-
-            //Deal damage
-            health -= hitbox.damage;
-
-            //Assign knockback
-
-            //Make invulnerable for a period
-            StartCoroutine(DamageInvulnerability());
         }
 
     }

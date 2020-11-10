@@ -19,7 +19,6 @@ public class BasicEnemyMovement : Enemy
     //the destination as a 3d vector
     [SerializeField] Vector3 randomDestination;
 
-    private Vector3 playerLocation;
 
 
     // Start is called before the first frame update
@@ -44,11 +43,17 @@ public class BasicEnemyMovement : Enemy
             //If you have reached the player, stop for a moment
             if (Vector3.Distance(playerLocation, currentLocation) < 0.1)
             {
-                StartCoroutine(StopandWait());
+                StartCoroutine(StopandWait(thinkTime));
             }
 
+            //set the destination to the x and z coordinates of the player
+            Vector3 destination = playerLocation;
+            //set the destination's y axis the the current enemy location
+            destination.y = startingLocation.y;
+
             //Look at the destination
-            transform.LookAt(playerLocation);
+            transform.LookAt(destination);
+            
             //move forward
             transform.Translate(Vector3.forward * Time.deltaTime * movespeed);
         }
@@ -62,11 +67,9 @@ public class BasicEnemyMovement : Enemy
             //If you have reached your previous destination, pick a new destination
             if (Vector3.Distance(randomDestination, currentLocation) < 0.1)
             {
-                StartCoroutine(StopandWait());
+                StartCoroutine(StopandWait(thinkTime));
                 PickDestination();
             }
-
-
 
             //Look at the destination
             transform.LookAt(randomDestination);
@@ -87,7 +90,7 @@ public class BasicEnemyMovement : Enemy
     }
 
     //what happens when an enemy collides with a hit box
-    void OnTriggerEnter(Collider attackingHitbox)
+    protected override void OnTriggerEnter(Collider attackingHitbox)
     {
         Debug.Log("Collision Detected");
 
@@ -102,25 +105,22 @@ public class BasicEnemyMovement : Enemy
 
             //Assign knockback
 
+
             //Make invulnerable for a period
-            StartCoroutine(DamageInvulnerability());
+            StartCoroutine(DamageInvulnerability(hitInvulnerability));
         }
-
-
-
-
 
     }
     
     //make target invulnerable for a brief period after taking a hit
-    IEnumerator DamageInvulnerability()
+    IEnumerator DamageInvulnerability(float invulnTime)
     {
         //make self invulnerable and start a clock
         vulnerable = false;
         float elapsedTime = 0;
 
         //clock ticks
-        while (hitInvulnerablility > elapsedTime)
+        while (invulnTime > elapsedTime)
         {
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -130,11 +130,6 @@ public class BasicEnemyMovement : Enemy
         //once clock is finished make self vulnerable again
         vulnerable = true;
 
-    }
-
-    void Death()
-    {
-        Destroy(gameObject);
     }
 
     //required method for drawing with gizmo's, should be locked away when working without debug mode
