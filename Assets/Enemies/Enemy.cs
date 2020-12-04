@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     protected Vector2 startingCoordinates;
     protected Vector3 currentLocation;
 
+    protected Rigidbody rb;
+
     //track the player
     [SerializeField] GameObject player;
     protected Vector3 playerLocation;
@@ -35,16 +37,23 @@ public class Enemy : MonoBehaviour
     protected Hitbox hitbox;
 
 
+    float gravity = 14;
+    protected Vector3 movement = new Vector3();
+
+    [SerializeField] protected bool isEffectedByGravity;
+
 
 
 
     //gets the location of the enemy ASAP, and marks it as the enemy startingLocation
     void Awake()
     {
-
+        rb = GetComponent<Rigidbody>();
         startingLocation = transform.position;
-        startingCoordinates.x = transform.position.x;
-        startingCoordinates.y = transform.position.z;
+
+        startingCoordinates.x = startingLocation.x;
+        startingCoordinates.y = startingLocation.z;
+
     }
 
     // Start is called before the first frame update, stop the enemy from waiting and pick a destination
@@ -67,15 +76,26 @@ public class Enemy : MonoBehaviour
         //Check for player in range
         if (CheckForPlayer())
         {
-            //Move towards player if in range
             MoveToPlayer();
         }
         else
         {
-            //Patrol randomly if player not in range
             Patrol();
         }
 
+    }
+
+    // Move in the direction specified by movement, this is as of yet unimplemented
+    protected virtual void Move()
+    {
+        if(isEffectedByGravity)
+        {
+            movement.y += gravity;
+        }
+        rb.velocity = (movement);
+
+        //the old way for reference
+        //transform.Translate(Vector3.forward * Time.detlaTime * movespeed);
     }
 
     //what the enemy does when its health reaches 0
@@ -127,7 +147,7 @@ public class Enemy : MonoBehaviour
     }
 
     //make enemy invulnerable for a brief period after taking a hit
-    protected IEnumerator DamageInvulnerability()
+    protected IEnumerator DamageInvulnerability(float invulnerablilityDuration)
     {
         //make self invulnerable and start a clock
         vulnerable = false;

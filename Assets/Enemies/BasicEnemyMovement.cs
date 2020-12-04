@@ -7,23 +7,23 @@ public class BasicEnemyMovement : Enemy
 
 
     // The range at which the bad boy will aggro to the good boy
-    [SerializeField] private float aggroRange;
+    [SerializeField] protected float aggroRange;
     // Enemy movespeed
-    [SerializeField] private float movespeed;
+    [SerializeField] protected float movespeed;
     // Distance the enemy is able to roam
     [SerializeField] public float roamDistance;
     //distance at which the enemy can detect the player
-    [SerializeField] private float sightLength;
+    [SerializeField] protected float sightLength;
     //the destination of the enemy as a 2d vector
     Vector2 randomDirection;
     //the destination as a 3d vector
-    [SerializeField] Vector3 randomDestination;
-
-
+    Vector3 randomDestination;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         PickDestination();
     }
 
@@ -54,7 +54,7 @@ public class BasicEnemyMovement : Enemy
             //Look at the destination
             transform.LookAt(destination);
             
-            //move forward
+            //move forward, this will need to be replaced with a more generic movement change that reflects the character's position
             transform.Translate(Vector3.forward * Time.deltaTime * movespeed);
         }
     }
@@ -73,11 +73,12 @@ public class BasicEnemyMovement : Enemy
 
             //Look at the destination
             transform.LookAt(randomDestination);
-            //move forward
+            //move forward, this will need to be replaced with a more generic movement change that reflects the character's position
             transform.Translate(Vector3.forward * Time.deltaTime * movespeed);
 
         }
     }
+
 
 
     void PickDestination()
@@ -107,30 +108,11 @@ public class BasicEnemyMovement : Enemy
 
 
             //Make invulnerable for a period
-            StartCoroutine(DamageInvulnerability(hitInvulnerability));
+            StartCoroutine(DamageInvulnerability(hitInvulnerablility));
         }
 
     }
-    
-    //make target invulnerable for a brief period after taking a hit
-    IEnumerator DamageInvulnerability(float invulnTime)
-    {
-        //make self invulnerable and start a clock
-        vulnerable = false;
-        float elapsedTime = 0;
 
-        //clock ticks
-        while (invulnTime > elapsedTime)
-        {
-            elapsedTime += Time.deltaTime;
-            yield return null;
-
-        }
-
-        //once clock is finished make self vulnerable again
-        vulnerable = true;
-
-    }
 
     //required method for drawing with gizmo's, should be locked away when working without debug mode
     void OnDrawGizmos()
@@ -144,6 +126,8 @@ public class BasicEnemyMovement : Enemy
         Gizmos.color = gizmoColour;
         Gizmos.DrawSphere(transform.position, roamDistance);
     }
+
+
 
 
 }

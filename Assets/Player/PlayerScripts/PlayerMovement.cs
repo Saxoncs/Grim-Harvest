@@ -419,8 +419,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
-
     IEnumerator WallJump()
     {
         // push off from the wall by sending force in the opposite direction of the wall (this could potentially be shortcut by simply sending the player backwards, I don't know how often a player will be wallrunning up something while not facing it or if that's even a good idea.) also go up too.
